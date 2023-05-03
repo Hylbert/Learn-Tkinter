@@ -11,7 +11,14 @@ class Application:
         ou seja, é a nossa janela de aplicação, que contém o título, e botões de maximizar, minimizar e fechar.'''
         self.widget1.pack()
         self.msg = Label(self.widget1, text = 'Primeiro widget')
+        self.msg['font'] = ('Verdana', '10', 'italic', 'bold')
         self.msg.pack()
+        self.sair = Button(self.widget1)
+        self.sair['text'] = 'Sair'
+        self.sair['font'] = ('Calibri', '10')
+        self.sair['width'] = 5
+        self.sair['command'] = self.widget1.quit
+        self.sair.pack()
 
 root = Tk() # Essa classe permite que os widgets possam ser utilizados na aplicação.
 Application(root)
