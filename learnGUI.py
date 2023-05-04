@@ -1,4 +1,5 @@
 '''
+
 Fonte: https://www.devmedia.com.br/tkinter-interfaces-graficas-em-python/33956
 
 '''
@@ -7,8 +8,27 @@ from tkinter import*
 from tkinter import font
 from turtle import left
 
+'''
+Container – É uma analogia a um container físico e tem como objetivo organizar e guardar objetos. Da mesma forma este conceito serve para um container em interface. Nesse caso, os objetos que estamos armazenando são os widgets;
+Widget – É um componente qualquer na tela, que pode ser um botão, um ícone, uma caixa de texto, etc.;
+Event Handler – São tratadores de eventos. Por exemplo, ao clicarmos em um botão para executar uma ação, uma rotina é executada. Essa rotina é chamada de event handler;
+Event Loop – O event loop verifica constantemente se outro evento foi acionado. Caso a hipótese seja verdadeira, ele irá executar a rotina correspondente.
+
+'''
 class Application:
     def __init__(self, master = None):
+
+        '''
+        O módulo Tkinter oferece três formas de trabalharmos com geometria e posicionamento:
+
+        1. Pack;
+        2. Grid;
+        3. Place
+
+        Caso um widget não seja aplicado a nenhum gerenciador geométrico, ele continua existindo, mas invisível ao usuário.
+        
+        '''
+              
         self.fontePadrao = ('Arial', '10')
         self.primeiroContainer = Frame(master)
         self.primeiroContainer['pady'] = 10
@@ -53,6 +73,18 @@ class Application:
         self.autenticar['width'] = 12
         self.autenticar['command'] = self.verificaSenha
         self.autenticar.pack()
+
+        '''
+        Vamos ver algumas configurações de estilo mais comuns que podemos definir:
+
+Width – Largura do widget;
+Height – Altura do widget;
+Text – Texto a ser exibido no widget;
+Font – Família da fonte do texto;
+Fg – Cor do texto do widget;
+Bg – Cor de fundo do widget;
+Side – Define em que lado o widget se posicionará (Left, Right, Top, Bottom).
+        '''
 
         self.mensagem = Label(self.quartoContainer, text='', font=self.fontePadrao)
         self.mensagem.pack()
